@@ -1,0 +1,31 @@
+{% extends 'headerPage.html' %}
+{% block content %}
+
+
+    <body>
+
+     <div style="border:2px solid black">
+        <div class="jumbotron">
+           <div class='text-center'>
+               <h1  style="color:CornflowerBlue">Traffic Signs Identification</h1><br>
+               <form enctype="multipart/form-data" action="predictImage" method="post">
+                {% csrf_token %}
+                     <h3>Upload image to be classified</h3> <br>
+                    <input type="file" name="filePath" onchange="form.submit()">
+
+                </form>
+                <h3>or</h3><br><br>
+                <form action="predictVideo" method="post">
+                 {% csrf_token %}
+
+                     <input type="submit" name=" " >
+
+                 </form>
+
+            </div>
+        </div>
+
+    </div>
+    </body>
+</html>
+{% endblock %}

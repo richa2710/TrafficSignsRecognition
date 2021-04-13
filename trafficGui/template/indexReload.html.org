@@ -1,0 +1,35 @@
+{% extends 'headerPage.html' %}
+{% block content %}
+
+
+    <body>
+
+    <div style="border:2px solid black">
+        <div class="jumbotron">
+           <div class='text-center'>
+               <h1 style="color:CornflowerBlue">Traffic Signs Identification</h1><br>
+               <form enctype="multipart/form-data" action="predictImage" method="post">
+                {% csrf_token %}
+                    <h3>Upload image to be classified</h3> <br>
+                    <input  type="file" name="filePath">
+                    <input class="btn btn-secondary" type="submit" value="Classify">
+                </form>
+                <br><br>
+                <div class='container'>
+                    <img src={{filePathName}} width="70" height="70" >
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center">
+            <div class={{text_color}}>
+                    <h3>Predicted Sign: {{predictedSign}}</h3>
+                    <h3>Actual Sign: {{actualSign}}</h3>
+            </div>
+        </div>
+        <br>
+
+    </div>
+    </body>
+</html>
+{% endblock %}
