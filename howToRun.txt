@@ -30,5 +30,5 @@ Select file from Test directory.
 python webcam.py
 
 
-(The trained model is saved as model_trained_b1.p and model_trained_b1.h)
+(The trained model is saved as model_trained_b.p and model_trained_b.h5)
 
